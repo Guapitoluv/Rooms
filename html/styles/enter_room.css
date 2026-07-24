@@ -1,0 +1,9 @@
+.room {
+  transform: scale(1);
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.room:active {
+  opacity: 0.7;
+  transform: scale(0.98);
+}

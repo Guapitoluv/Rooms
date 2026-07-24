@@ -1,0 +1,260 @@
+:root {
+  /*
+  --color00: #0e0f3b;
+  --color01: #07407b;
+  --color02: #7fcdee;
+  --color03: #f7931e;
+  --color04: #ffffff;
+  */
+  --color00: rgb(40, 40, 40);
+  --color01: rgb(0, 0, 0);
+  --color02: rgb(250, 250, 250);
+  --color03: rgb(255, 255, 255);
+  --color04: rgb(100, 100, 100);
+}
+
+.padlock {
+  aspect-ratio: 1 / 1;
+  width: 15px;
+  position: absolute;
+  align-self: center;
+  right: 10px;
+}
+
+body {
+  background: var(--color01);
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: var(--color00);
+  border-radius: 10px;
+  color: var(--color03);
+  text-align: center;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+  gap: 10px;
+}
+
+section {
+  background: var(--color00);
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 15px;
+  padding-bottom: 25px;
+  width: 90%;
+  max-width: 500px;
+  gap: 10px;
+}
+
+
+
+h2#room-name {
+  color: var(--color02);
+  margin-left: 20px;
+}
+
+button, a.btn, a.btn-fill {
+  background: var(--color01);
+  border-radius: 10px;
+  border: none;
+  color: var(--color02);
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  margin: 0px;
+  transition: transform 0.5s, padding 0.5s;
+  
+  webkit-user-select: none;  /* Chrome, Safari, Opera */
+  -moz-user-select: none;     /* Firefox */
+  -ms-user-select: none;      /* Internet Explorer/Edge */
+  user-select: none;          /* Padrão moderno */
+  -webkit-user-drag: none;
+}
+
+button:active, a.btn:active {
+  transform: scale(0.95);
+}
+
+/*
+a.btn:hover {
+  padding: 8px;
+}*/
+
+#btn-options {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px
+}
+
+form {
+  box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    row-gap: 10px;
+  width: 100%;
+}
+
+form button {
+  grid-column: 1 / 3;
+}
+
+.field {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+label {
+  color: var(--color02);
+  grid-column: 1;
+  margin: 0px;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+input, .switch-container {
+  grid-column: 2;
+}
+
+.switch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#chat,
+#message-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/*PAINEL*/
+
+.painel {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+
+.painel-title {
+  background: var(--color01);
+  border-radius: 5px 5px 0px 0px;
+  color: var(--color03);
+  padding: 5px 15px;
+  margin: 0px;
+}
+
+.painel-table {
+  position: relative;
+  background: var(--color00);
+  border: 2px solid var(--color01);
+  border-radius: 0px 0px 5px 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  list-style-type: none;
+  padding: 5px;
+  margin: 0px;
+}
+
+.painel-item {
+  background: var(--color02);
+  border-radius: 5px;
+  padding: 2px 20px;
+}
+
+
+.submit-btn {
+  grid-column: 1 / 3;
+}
+
+#create-room-message {
+  padding: 10px;
+}
+
+.success, .failure {
+  text-align: center;
+  border-radius: 10px;
+  padding: 2px 20px;
+  align-self: center;
+}
+
+.success {
+  background-color: green;
+}
+
+.failure {
+  background-color: red;
+}
+
+.hidden {
+  display: none;
+}
+
+/*SWITCH*/
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+    background: #888;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: .2s;
+  -webkit-tap-highlight-color: transparent; 
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 3px;
+    top: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: .2s;
+}
+
+.switch input:checked + .slider {
+    background: #4caf50;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(24px);
+}
+
+
+
+a:focus, a:active {
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+}
+ 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/enter_room.css">
+  <title>Rooms - Enter</title>
+</head>
+
+<body>
+  <header>
+    <h1>Entering a Room</h1>
+  </header>
+  
+  <main>
+    <section>
+      <a class="btn" href="../index.html">Home</a>
+    </section>
+    
+    <section>
+      <div id="rooms" class="painel">
+        <h4 class="painel-title">Rooms</h4>
+        <ul class="painel-table"></ul>
+      </div>
+      
+      <form>
+        <label for="room-name">room name:</label>
+        <input type="text" id="room-name">
+        
+        <button class="submit-btn" type="button" id="enter-room">Enter Room</button>
+      </form>
+    </section>
+  </main>
+  
+  <script type="module" src="../scripts/enter_room.js"></script>
+</body>
+
+</html>

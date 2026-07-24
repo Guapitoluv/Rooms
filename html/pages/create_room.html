@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles/main.css">
+  <title>Rooms - Creation</title>
+</head>
+
+<body>
+  <header>
+    <h1>Creating a Room</h1>
+  </header>
+  
+  <main>
+    <section>
+      <a class="btn" href="../index.html">Home</a>
+    </section>
+    
+    <section>
+      <form>
+        <label for="room-name">room name:</label>
+        <input type="text" id="room-name">
+        
+        <label for="author-name">author name:</label>
+        <input type="text" id="author-name">
+        
+        <label for="password-enabled">Password</label>
+        <div class="switch-container">
+          <label class="switch">
+            <input id="room-password-enabled" type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+        
+        <label id="room-password-label" class="hidden" for="room-password">Room password:</label>
+        <input
+          id="room-password"
+          class="hidden"
+          name="room-password"
+          type="password">
+        
+        <button type="button" id="create-room-btn">Create Room</button>
+      </form>
+      
+      <div id="create-room-message" hidden></div>
+    </section>
+  </main>
+  
+  <script type="module" src="../scripts/create_room.js"></script>
+</body>
+
+</html>
