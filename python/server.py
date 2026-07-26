@@ -4,7 +4,6 @@ from typing import Any
 import asyncio
 import json
 
-from utils import is_json_serializable
 from models.models import Room, TextMessage
 from models.room_manager import RoomManager
 from models.session_manager import SessionManager
@@ -145,20 +144,20 @@ class Server:
                 "state": False
             })
             return
-
+        
         user_name: str = self.session_manager.get_user_by_socket(ws)
 
-        if user is None:
+        if user_name is None:
             return
 
         old_room = self.session_manager.get_room_by_user(user_name)
-
+        
         if old_room is not None:
             self.room_manager.leave(old_room, user_name)
         
         self.session_manager.join_room(user_name, room_name)
-        self.room_manager.join(room_name, user_namr)
-
+        self.room_manager.join(room_name, user_name)
+        
         await self.send_msg(ws, {
             "type": "enter_room",
             "room_name": room_name,

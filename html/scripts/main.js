@@ -1,4 +1,7 @@
 import { IdentifyMsg } from "./messages/messages.js"
+import { myConsole } from "./my_console.js";
+
+myConsole.init()
 
 //lock: <a href="https://www.flaticon.com/free-icons/lock" title="lock icons">Lock icons created by Gregor Cresnar - Flaticon</a>
 
@@ -6,13 +9,14 @@ import { IdentifyMsg } from "./messages/messages.js"
  * VARIABLES
  **************************************************/
 
-const protocol = window.location.protocol === "https:" ? "wss://" : "ws://";
+const protocol = window.location.protocol === "https:" ? "wss" : "ws";
 
 const host = window.location.protocol === "file:"
     ? "localhost:8000"
     : window.location.host;
 
-const socketUrl = `${protocol}${host}/socket`;
+const socketUrl = `${protocol}://${location.hostname}:8000/socket`;
+myConsole.log(socketUrl);
 const handlers = {};
 
 export const socket = new WebSocket(socketUrl);

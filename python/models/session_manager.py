@@ -30,7 +30,7 @@ class SessionManager:
     
     
     def join_room(self, user_name: str, room_name: str) -> None:
-        self._user_room[user_name] = room
+        self._user_room[user_name] = room_name
     
     
     def leave_room(self, user_name: str) -> str | None:

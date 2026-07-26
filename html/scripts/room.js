@@ -70,8 +70,9 @@ addHandler("chat_message", (data) => {
         chatMessages.append(newMsg);
     }
 });
-
+console.log
 sendBtn.addEventListener("click", async () => {
+    console.log("clicked");
     if (!msgInput.value.trim()) return;
     
     const msg_id = crypto.randomUUID();

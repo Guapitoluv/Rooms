@@ -1,9 +1,14 @@
 import asyncio
 from websockets.asyncio.server import serve
+from pathlib import Path
 
+from models.database import Database
+from models.models import Room
 from server import Server
 
 server = Server()
+
+#db = Database(Path(__file__).parent / "data/data.db")
 
 server.room_manager.create("Python", "Aryel", True, "123")
 server.room_manager.create("JavaScript", "Aryel", True)

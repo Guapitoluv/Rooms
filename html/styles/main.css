@@ -1,71 +1,93 @@
 :root {
-  /*
-  --color00: #0e0f3b;
-  --color01: #07407b;
-  --color02: #7fcdee;
-  --color03: #f7931e;
-  --color04: #ffffff;
-  */
   --color00: rgb(40, 40, 40);
   --color01: rgb(0, 0, 0);
   --color02: rgb(250, 250, 250);
   --color03: rgb(255, 255, 255);
-  --color04: rgb(100, 100, 100);
+  --color04: rgb(20, 20, 20);
 }
 
-.padlock {
-  aspect-ratio: 1 / 1;
-  width: 15px;
+#console {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   position: absolute;
-  align-self: center;
-  right: 10px;
+  background-color: var(--color04);
+  border-radius: 10px;
+  border: solid 2px white;
+  display: flex;
+  flex-direction: column;
+  max-height: 350px;
+  min-width: 300px;
+  width: 40%;
+  touch-action: none;
+  box-sizing: border-box;
+  padding: 10px;
+  gap: 10px;
+}
+
+#console-title {
+  color: white;
+  margin: 0;
+}
+
+#console-logs {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  overflow-y: scroll;
+}
+
+.log {
+  background-color: var(--color02);
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 body {
-  background: var(--color01);
+  background-color: var(--color01);
   display: flex;
   flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-  background: var(--color00);
+  background-color: var(--color00);
   border-radius: 10px;
   color: var(--color03);
   text-align: center;
 }
 
 main {
-  align-items: center;
+  background-color: var(--color04);
   display: flex;
   flex-direction: column;
+  gap: 10px;
   justify-content: center;
   margin: 20px;
-  gap: 10px;
+  padding: 10px;
+  align-self: center;
+  width: 90%;
+  max-width: 600px;
 }
 
 section {
-  background: var(--color00);
+  align-items: stretch;
+  background-color: var(--color00);
   border-radius: 5px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  gap: 10px;
   padding: 15px;
   padding-bottom: 25px;
-  width: 90%;
-  max-width: 500px;
-  gap: 10px;
 }
 
-
-
-h2#room-name {
-  color: var(--color02);
-  margin-left: 20px;
-}
-
-button, a.btn, a.btn-fill {
-  background: var(--color01);
+button, a.btn {
+  background-color: var(--color01);
   border-radius: 10px;
   border: none;
   color: var(--color02);
@@ -86,23 +108,11 @@ button:active, a.btn:active {
   transform: scale(0.95);
 }
 
-/*
-a.btn:hover {
-  padding: 8px;
-}*/
-
-#btn-options {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 10px
-}
-
 form {
   box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    row-gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  row-gap: 10px;
   width: 100%;
 }
 
@@ -110,22 +120,22 @@ form button {
   grid-column: 1 / 3;
 }
 
-.field {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-}
-
-label {
+form label, label {
   color: var(--color02);
   grid-column: 1;
   margin: 0px;
 }
 
-input {
+form input {
   width: 100%;
   box-sizing: border-box;
   margin: 0px;
+}
+
+.field {
+  display: grid;
+  align-items: center;
+  justify-items: center;
 }
 
 input, .switch-container {
@@ -249,8 +259,6 @@ input, .switch-container {
 .switch input:checked + .slider::before {
     transform: translateX(24px);
 }
-
-
 
 a:focus, a:active {
   outline: none;
